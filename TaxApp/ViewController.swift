@@ -14,6 +14,18 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    //ViewContrtollerのソースコードに遷移されるときに呼ばれるメソッド
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        //segueから遷移先のResultViewControllerを取得する
+        let resultViewController:ResultViewController = segue.destination as! ResultViewController
+        //遷移先のResultViewControllerで宣言しているtaxに値を代入して渡す
+        resultViewController.price = MyTextField.text!
+    }
+    @IBOutlet weak var MyTextField: UITextField!
+    //遷移先から戻ってきたときに呼ばれるsegueを設定
+    @IBAction func unwind(_ segue: UIStoryboardSegue){
+        
+    }
 
 
 }
