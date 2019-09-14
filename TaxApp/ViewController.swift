@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         //segueから遷移先のResultViewControllerを取得する
         let resultViewController:ResultViewController = segue.destination as! ResultViewController
         //遷移先のResultViewControllerで宣言しているtaxに値を代入して渡す
-        resultViewController.price = MyTextField.text!
+        resultViewController.moji = MyTextField.text!
     }
     @IBOutlet weak var MyTextField: UITextField!
     //遷移先から戻ってきたときに呼ばれるsegueを設定

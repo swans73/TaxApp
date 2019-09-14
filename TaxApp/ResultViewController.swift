@@ -12,11 +12,16 @@ class ResultViewController: UIViewController {
 //2画面目のラベルをこのViewControllerにOutlet接続
     @IBOutlet weak var label: UILabel!
     //受け取るためのプロパティを宣言
-    var price:String = ""
-    var tax:Double = 0.08
+    var moji:String = ""
+    var tax:Float = 1.08
     override func viewDidLoad() {
         super.viewDidLoad()
-
+//前画面で取得した値をFloat型に変換
+        let price = Float(moji)!
+        //計算した値をString型に変換
+        let result = String(price * tax)
+        label.text = "税込" + result + "円です！"
+       
         // Do any additional setup after loading the view.
     }
     
@@ -31,9 +36,6 @@ class ResultViewController: UIViewController {
     }
     */
     //上記では空文字だが、1画面目から遷移するときにprepareForsegueでtaxの値を新たに代入したのでその値が入っている
-    let result = price.toInt()! * tax
-    label.text = "税込" + result + "です！"
-    // ラベルにOutlet接続を設定
-    @IBOutlet weak var label: UILabel!
+   
     
 }
